@@ -180,7 +180,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10f"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="calculatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qct-Qo-veH"/>
+                                    <action selector="calculatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aAw-D7-ejY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -205,18 +205,19 @@
                         <outlet property="tenPctBtn" destination="7y6-Kf-yF0" id="CBD-l2-jQM"/>
                         <outlet property="twentyPctBtn" destination="UtR-dU-EKt" id="TEa-VJ-NWE"/>
                         <outlet property="zeroPctBtn" destination="XzR-0E-Xf7" id="hpF-Hf-EDV"/>
+                        <segue destination="Dnf-m2-FPm" kind="presentation" identifier="goToResult" id="DGa-HX-2LV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
         </scene>
-        <!--View Controller-->
+        <!--ResoultVC-->
         <scene sceneID="bJV-Cc-sXH">
             <objects>
-                <viewController id="Dnf-m2-FPm" sceneMemberID="viewController">
+                <viewController id="Dnf-m2-FPm" customClass="ResoultVC" customModule="Tipsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DNW-gk-FsX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCe-Te-efL">
@@ -253,7 +254,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzn-9K-6hu">
-                                <rect key="frame" x="87.666666666666686" y="724" width="200" height="54"/>
+                                <rect key="frame" x="87.666666666666686" y="670" width="200" height="54"/>
                                 <color key="backgroundColor" name="TextGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="0Lh-eY-3GO"/>
@@ -266,6 +267,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10f"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="RecalculateBtnPressed:" destination="Dnf-m2-FPm" eventType="touchUpInside" id="8s6-gH-puW"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split between 2 people, with 10% tip." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGt-bn-sCv">
                                 <rect key="frame" x="50" y="305" width="275" height="117"/>
@@ -290,6 +294,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jmu-aI-Opa"/>
                     </view>
+                    <connections>
+                        <outlet property="describeLbl" destination="HGt-bn-sCv" id="ntS-ym-XRB"/>
+                        <outlet property="valuePerPersonLbl" destination="uLJ-ii-hft" id="kZe-GM-g0l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uLi-Eb-NGd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

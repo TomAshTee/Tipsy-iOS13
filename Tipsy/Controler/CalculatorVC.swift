@@ -51,6 +51,8 @@ class CalculatorVC: UIViewController {
     @IBAction func calculatePressed(_ sender: UIButton) {
         tip.billValue = Double(billTextField.text ?? "0.0") ?? 0.0
         
+        self.performSegue(withIdentifier: "goToResult", sender: self)
+        
         print("Bill val: \(tip.getBillValue())")
         print("Bill val per person: \(tip.getBillValuePerPerson())")
     }
@@ -59,5 +61,12 @@ class CalculatorVC: UIViewController {
         self.view.endEditing(true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResult" {
+            let destinationVC = segue.destination as! ResoultVC
+            destinationVC.describeText = "Split between \(tip.splitNumber) people, with \(tip.PctValue * 100)% tip."
+            destinationVC.valuePerPerson = tip.getBillValuePerPerson()
+        }
+    }
 }
 
